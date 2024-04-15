@@ -12,8 +12,13 @@ app.use(express.urlencoded({extended:true, limit:'16kb'}))
 
 app.use(cookieParser())
 
-app.get('/',(req,res)=>{
-        res.send('Hello OWrldsadsas')
-})
+//import routes
+import userRouter from './routes/user.routes.js'
+
+
+
+
+//routes declaration
+app.use('/api/v1/users',userRouter)
 
 export {app}
