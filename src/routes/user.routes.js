@@ -11,7 +11,7 @@ router.route('/logout').post(verifyJWT,userLogout)
 router.route('/getuserdetails').get(verifyJWT,getUserDetails)
 
 //admin panel
-router.route('/update-user').post(verifyJWT,updateUser)
+router.route('/update-user').patch(verifyJWT,updateUser)
 router.route('/get-all-users').get(verifyJWT,getAllUsers)
 
 

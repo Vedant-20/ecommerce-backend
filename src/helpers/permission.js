@@ -1,4 +1,4 @@
-import { User } from "../models/user.model";
+import { User } from "../models/user.model.js";
 
 const uploadProductPermission = async(userId) => {
     const user = await User.findById(userId)

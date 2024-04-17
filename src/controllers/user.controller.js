@@ -129,15 +129,31 @@ const updateUser=asyncHandler(async(req,res)=>{
 
     const {userId, email, name, role}=req.body
 
-    const payload = {
-        ...( email && { email : email}),
-        ...( name && { name : name}),
-        ...( role && { role : role}),
+    // const payload = {
+    //     ...( email && { email : email}),
+    //     ...( name && { name : name}),
+    //     ...( role && { role : role}),
+    // }
+
+    
+
+    
+
+    const updateUser=await User.findByIdAndUpdate(
+        userId,
+        {
+            $set:{
+                role:role
+            }
+        },
+        {
+            new:true
+        }
+    ).select('-password')
+
+    if(!updateUser){
+        throw new Error('User Not Found')
     }
-
-    const user=await User.findById(sessionUser)
-
-    const updateUser=await User.findByIdAndUpdate(userId,payload)
 
     res
     .status(200)

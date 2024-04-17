@@ -1,7 +1,7 @@
-import { Product } from "../models/product.model";
-import { uploadProductPermission } from "../helpers/permission";
-import { asyncHandler } from "../utils/asyncHandler";
-import { ApiResponse } from "../utils/ApiResponse";
+import { Product } from "../models/product.model.js";
+import { uploadProductPermission } from "../helpers/permission.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
 
 
 const uploadProduct=asyncHandler(async(req,res)=>{
