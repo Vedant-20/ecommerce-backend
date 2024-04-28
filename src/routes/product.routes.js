@@ -16,7 +16,7 @@ const router = Router();
 
 router.route("/upload-product").post(verifyJWT, uploadProduct);
 router.route("/update-product").post(verifyJWT, updateProduct);
-router.route("/search").get(searchProduct);
+router.route("/search").post(searchProduct);
 router.route("/get-product-details").post(getProductDetails);
 router.route("/get-all-products").get(getAllProducts);
 router.route("/get-categorywise-products").post(getCategoryWiseProducts);

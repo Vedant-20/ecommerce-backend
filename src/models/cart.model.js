@@ -1,14 +1,17 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const addToCart = new mongoose.Schema({
-    productId : {
-         ref : 'product',
-         type : String,
+const addToCart = new mongoose.Schema(
+  {
+    productId: {
+      ref: "Product",
+      type: String,
     },
-    quantity : Number,
-    userId : String,
- },{
-     timestamps : true
- })
+    quantity: Number,
+    userId: String,
+  },
+  {
+    timestamps: true,
+  }
+);
 
- export const Cart=mongoose.model('Cart',addToCart)
+export const Cart = mongoose.model("Cart", addToCart);
