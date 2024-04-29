@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  activeServerKeeper,
   addToCartController,
   addToCartViewProduct,
   countAddToCartProduct,
@@ -32,5 +33,8 @@ router.route("/delete-cart-product").post(verifyJWT, deleteAddToCartProduct);
 router.route("/countAddToCartProduct").get(verifyJWT, countAddToCartProduct);
 router.route("/view-cart-product").get(verifyJWT, addToCartViewProduct);
 router.route("/addtocart").post(verifyJWT, addToCartController);
+
+//health check
+router.route("/active-server").get(activeServerKeeper);
 
 export default router;

@@ -238,6 +238,10 @@ const addToCartController = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, saveProduct, "Product added in cart"));
 });
 
+const activeServerKeeper = asyncHandler(async (req, res) => {
+  res.status(200).json(new ApiResponse(200, {}, "Health Tested"));
+});
+
 export {
   userSignUp,
   userSignIn,
@@ -250,4 +254,5 @@ export {
   getAllUsers,
   addToCartViewProduct,
   addToCartController,
+  activeServerKeeper,
 };
