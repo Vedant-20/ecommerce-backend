@@ -8,7 +8,7 @@ dotenv.config({
   path: "./.env",
 });
 
-job.start();
+// job.start();
 
 connectDB()
   .then(() => {
